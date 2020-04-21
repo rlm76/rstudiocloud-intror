@@ -26,3 +26,20 @@ pi * (diameter/2)^2
 ```
 
 
+# data type questions
+as.integer(TRUE)
+
+sys.time = Sys.time()
+is.integer(sys.time)
+is.numeric(sys.time)
+is.character(sys.time)
+is.factor(sys.time)
+is.logical(sys.time)
+class(sys.time)
+class(Sys.time())
+
+sys.timezone = Sys.timezone()
+class(sys.timezone)
+
+as.character("“Do you think this is a game?”, he said. “No, I think Jenga’s a game”, Archer responded.")
+
