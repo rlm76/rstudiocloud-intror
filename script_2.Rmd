@@ -1,0 +1,53 @@
+---
+title: "Data Pipelines"
+output: html_notebook
+---
+
+# Data pipelines use the tidyverse style of doing things (ie with pipes!)
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+write_csv(iris, "iris.csv")
+```
+```{r}
+iris_raw <- read_csv("iris.csv")
+```
+
+
+```{r}
+library(readxl)
+library(writexl)
+write_xlsx(iris, "iris.xlsx")
+view(iris_raw)
+```
+
+
+```{r}
+DataExplorer::create_report(iris_raw, y="Species")
+```
+
+# piping to query data
+```{r}
+iris_raw %>% 
+  head(10)
+
+iris_raw %>% 
+  tail(10)
+
+iris_raw %>% 
+  sample_n(10) # 10 random rows, has range of species
+```
+# finding certain stuff
+```{r}
+iris_raw %>% 
+  filter(Species=="setosa", Sepal.Length > 5.5)
+```
+```{r}
+iris_raw %>% 
+filter_if(is.numeric, any_vars(.,<1)
+ ``
+
